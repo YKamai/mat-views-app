@@ -1,0 +1,27 @@
+<%= link_to 'Top 1', top_scorers_path(top: 1) %> &nbsp;|&nbsp;
+<%= link_to 'Top 5', top_scorers_path(top: 5) %> &nbsp;|&nbsp;
+<%= link_to 'Top 10', top_scorers_path(top: 10) %>
+
+<table border="1">
+  <caption>Top Scorers</caption>
+  <thead>
+    <tr>
+     <th>Player Name</th>
+     <th>Position</th>
+     <th>Team</th>
+     <th>Season</th>
+     <th>Goals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scorers.each do |scorer| %>
+    <tr>
+      <td><%= scorer.player_name %></td>
+      <td><%= scorer.player_position %></td>
+      <td><%= scorer.team_name %></td>
+      <td><%= scorer.season %></td>
+      <td><%= scorer.goal_count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
